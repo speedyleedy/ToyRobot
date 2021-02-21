@@ -29,6 +29,10 @@ public class Game {
                 robot.move();
             }
 
+            if (Command.ChoiceType.LEFT == c.getChoice() || Command.ChoiceType.RIGHT == c.getChoice()){
+                robot.turn(c.getChoice());
+            }
+
 
         }
 

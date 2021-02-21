@@ -44,4 +44,24 @@ public class RobotTest
 
     }
 
+    @Test
+    public void shouldTurnLeft(){
+        Mockito.when(surface.checkBounds(Mockito.anyInt(), Mockito.anyInt())).thenReturn(0);
+        robot.place(1,1, Command.Direction.NORTH);
+        robot.turn(Command.ChoiceType.LEFT);
+
+        assertEquals(Command.Direction.WEST, robot.getDirection());
+
+    }
+
+    @Test
+    public void shouldTurnRight(){
+        Mockito.when(surface.checkBounds(Mockito.anyInt(), Mockito.anyInt())).thenReturn(0);
+        robot.place(1,1, Command.Direction.NORTH);
+        robot.turn(Command.ChoiceType.RIGHT);
+
+        assertEquals(Command.Direction.EAST, robot.getDirection());
+
+    }
+
 }
