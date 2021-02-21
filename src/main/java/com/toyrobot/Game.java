@@ -35,6 +35,7 @@ public class Game {
 
             if (Command.ChoiceType.ERROR == c.getChoice()){
                 System.out.println("Invalid Commands. For Placement, try [PLACE X,Y,DIRECTION]");
+                System.out.println("Other valid commands are: MOVE, LEFT, RIGHT, REPORT, QUIT");
             }
 
 
