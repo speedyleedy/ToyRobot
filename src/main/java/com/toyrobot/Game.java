@@ -2,13 +2,34 @@ package com.toyrobot;
 
 public class Game {
     GameInput input = new GameInput();
+    private Robot robot;
+    private Surface surface;
+
     public void mainLoop(){
+
+        surface = new Surface(5,5);
+        robot = new Robot(surface);
+
         while (true){
             System.out.print("Enter input: ");
             Command c = input.getInput();
             if (Command.ChoiceType.QUIT == c.getChoice()){
                 return;
             }
+
+            if (Command.ChoiceType.PLACE == c.getChoice()){
+                robot.place(c.getX(), c.getY(), c.getDirection());
+            }
+
+            if (Command.ChoiceType.REPORT == c.getChoice()){
+                robot.report();
+            }
+
+            if (Command.ChoiceType.MOVE == c.getChoice()){
+                robot.move();
+            }
+
+
         }
 
 

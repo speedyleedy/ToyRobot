@@ -4,14 +4,38 @@ public class Command {
 
     private int x;
     private int y;
-    private ChoiceType direction;
+    private Direction direction;
 
     public Command(ChoiceType choice, String arguments) {
         this.choice = choice;
         this.arguments = arguments;
     }
 
-    public Command(int x, int y, ChoiceType direction, ChoiceType choice) {
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
+    public Direction getDirection() {
+        return direction;
+    }
+
+    public void setDirection(Direction direction) {
+        this.direction = direction;
+    }
+
+    public Command(int x, int y, Direction direction, ChoiceType choice) {
         this.x = x;
         this.y = y;
         this.direction = direction;
@@ -29,7 +53,7 @@ public class Command {
                    //check that parts has 3 bits, X, Y and Direction
                    int x = Integer.parseInt(args[0]);
                    int y = Integer.parseInt(args[1]);
-                   ChoiceType directional = ChoiceType.valueOf(args[2]);
+                   Direction directional = Direction.valueOf(args[2]);
                    Command ret = new Command(x, y, directional, ChoiceType.PLACE);
                    return ret;
                default:
@@ -65,13 +89,16 @@ public class Command {
         QUIT,
         PLACE,
         MOVE,
-        NORTH,
-        SOUTH,
-        EAST,
-        WEST,
         REPORT,
         LEFT,
         RIGHT
+    }
+
+    public enum Direction{
+        NORTH,
+        SOUTH,
+        EAST,
+        WEST
     }
 
 
