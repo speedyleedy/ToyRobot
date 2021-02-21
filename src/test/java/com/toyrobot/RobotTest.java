@@ -64,4 +64,29 @@ public class RobotTest
 
     }
 
+
+    @Test
+    public void shouldMoveInDirectionFacing(){
+        robot.place(1,1, Command.Direction.NORTH);
+        robot.move();
+
+        assertEquals(1, robot.getX());
+        assertEquals(2, robot.getY());
+
+    }
+
+    @Test
+    public void shouldNotCommitSuicide(){
+
+        Surface surface = new Surface(5,5);
+        Robot rob = new Robot(surface);
+
+        rob.place(4,4, Command.Direction.NORTH);
+        rob.move();
+
+        assertEquals(4, rob.getY());
+
+
+    }
+
 }
