@@ -11,7 +11,7 @@ public abstract class AbstractActor {
     }
 
     public void report(){
-        System.out.println("FOOD  "+ x + " " + y + " " + direction);
+        System.out.println("REPORT -  " + x + " " + y + " " + direction);
     }
 
     public int getX() {
@@ -41,14 +41,13 @@ public abstract class AbstractActor {
     private boolean placed = false;
 
     public void place(int x, int y, Command.Direction direction) {
-        if (!placed){
+
             if(stage.checkBounds(x,y) == 0){
                 this.x = x;
-                this.y = x;
+                this.y = y;
                 this.direction = direction;
+                placed = true;
             }
-            placed = true;
-        }
 
     }
     public void move(){
