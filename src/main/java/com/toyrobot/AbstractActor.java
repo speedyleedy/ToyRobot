@@ -86,29 +86,28 @@ public abstract class AbstractActor {
             return;
         }
 
-        System.out.println("Current Direction is " + direction);
 
         if (choice == Command.ChoiceType.RIGHT){
             if (direction == Command.Direction.NORTH){
-                direction = Command.Direction.EAST;
+                setDirection(Command.Direction.EAST);
             } else if (direction == Command.Direction.EAST){
-                direction = Command.Direction.SOUTH;
+                setDirection(Command.Direction.SOUTH);
             } else if (direction == Command.Direction.SOUTH){
-                direction = Command.Direction.WEST;
+                setDirection(Command.Direction.WEST);
             } else if (direction == Command.Direction.WEST){
-                direction = Command.Direction.NORTH;
+                setDirection(Command.Direction.NORTH);
             }
         }
 
         if (choice == Command.ChoiceType.LEFT){
             if (direction == Command.Direction.NORTH){
-                direction = Command.Direction.WEST;
+                setDirection(Command.Direction.WEST);
             } else if (direction == Command.Direction.EAST){
-                direction = Command.Direction.NORTH;
+                setDirection(Command.Direction.NORTH);
             } else if (direction == Command.Direction.SOUTH){
-                direction = Command.Direction.EAST;
+                setDirection(Command.Direction.EAST);
             } else if (direction == Command.Direction.WEST){
-                direction = Command.Direction.SOUTH;
+                setDirection(Command.Direction.SOUTH);
             }
         }
 
