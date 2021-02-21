@@ -61,17 +61,17 @@ public class Command {
     }
 
     public static Command parse(String input) {
-        String[] parts = input.split(" ");
-        if (parts.length >0){
+        String[] parts = input.split(" ",2);
+        if (parts.length > 0){
            ChoiceType c = ChoiceType.valueOf(parts[0]);
            switch (c){
                case PLACE:
                    //error checking here to make sure parts contains the correct stuff.
                    String[] args = parts[1].split(",");
                    //check that parts has 3 bits, X, Y and Direction
-                   int x = Integer.parseInt(args[0]);
-                   int y = Integer.parseInt(args[1]);
-                   Direction directional = Direction.valueOf(args[2]);
+                   int x = Integer.parseInt(args[0].trim());
+                   int y = Integer.parseInt(args[1].trim());
+                   Direction directional = Direction.valueOf(args[2].trim());
                    Command ret = new Command(x, y, directional, ChoiceType.PLACE);
                    return ret;
                default:

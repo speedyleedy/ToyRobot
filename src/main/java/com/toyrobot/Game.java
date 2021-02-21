@@ -33,6 +33,10 @@ public class Game {
                 robot.turn(c.getChoice());
             }
 
+            if (Command.ChoiceType.ERROR == c.getChoice()){
+                System.out.println("Invalid Commands. For Placement, try [PLACE X,Y,DIRECTION]");
+            }
+
 
         }
 
