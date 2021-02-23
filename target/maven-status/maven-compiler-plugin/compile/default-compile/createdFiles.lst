@@ -1,1 +1,11 @@
+com/toyrobot/Game.class
+com/toyrobot/GameInput.class
+com/toyrobot/AbstractStage.class
+com/toyrobot/Command$1.class
+com/toyrobot/AbstractActor.class
+com/toyrobot/Command$ChoiceType.class
+com/toyrobot/Robot.class
+com/toyrobot/Surface.class
+com/toyrobot/Command$Direction.class
 com/toyrobot/App.class
+com/toyrobot/Command.class
