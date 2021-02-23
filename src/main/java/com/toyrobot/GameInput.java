@@ -28,11 +28,5 @@ public class GameInput {
             return new Command(Command.ChoiceType.ERROR, null);
         }
 
-
-
-    }
-
-    public void doAction(){
-
     }
 }
