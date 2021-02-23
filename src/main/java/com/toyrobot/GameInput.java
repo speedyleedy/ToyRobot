@@ -14,7 +14,7 @@ public class GameInput {
         try{
             while (true){
 
-                String input = reader.readLine();
+                String input = reader.readLine().toUpperCase();
 
                 Command ret = Command.parse(input);
 

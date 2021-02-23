@@ -10,6 +10,11 @@ public class Game {
         surface = new Surface(5,5);
         robot = new Robot(surface);
 
+        System.out.println("Place your robot on the table them move it around. To place : " +
+                "\n type [PLACE X,Y,DIRECTION], where x & y are a grid of 5 * 5 and Direction is a [NORTH], [SOUTH], [EAST] or [WEST] " +
+                "\n type [MOVE] to move 1 space in a direction" +
+                "\n type [LEFT] or [RIGHT] to turn your robot left or right" +
+                "\n type [QUIT] when you've finished.");
         while (true){
             System.out.print("Enter input: ");
             Command c = input.getInput();
