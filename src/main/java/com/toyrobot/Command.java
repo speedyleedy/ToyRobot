@@ -61,6 +61,7 @@ public class Command {
     }
 
     public static Command parse(String input) {
+        //limiting to 2 parts, can't tell if a user will type place 0,0,NORTH or place 0, 0, north
         String[] parts = input.split(" ",2);
         if (parts.length > 0){
            ChoiceType c = ChoiceType.valueOf(parts[0]);
